@@ -127,7 +127,7 @@ function Add() {
                                     isValid ? setIsValidTemperature(true) : setIsValidTemperature(false)
                                 }}
                                 keyboardType='numeric' />
-                            <Text style={styles.error}>{isValidTemperature ? '' : 'Nhiệt độ không hợp lệ'}</Text>
+                            {/* <Text style={styles.error}>{isValidTemperature ? '' : 'Nhiệt độ không hợp lệ'}</Text> */}
                         </View>
 
                         <View style={styles.item}>
@@ -141,7 +141,7 @@ function Add() {
                                     isValid ? setIsValidHumidity(true) : setIsValidHumidity(false)
                                 }}
                                 keyboardType='numeric' />
-                            <Text style={styles.error}>{isValidHumidity ? '' : 'Độ ẩm không hợp lệ'}</Text>
+                            {/* <Text style={styles.error}>{isValidHumidity ? '' : 'Độ ẩm không hợp lệ'}</Text> */}
                         </View>
 
                         <View style={styles.item}>
@@ -155,7 +155,7 @@ function Add() {
                                     isValid ? setIsValidDust(true) : setIsValidDust(false)
                                 }}
                                 keyboardType='numeric' />
-                            <Text style={styles.error}>{isValidDust ? '' : 'Bụi mịn không hợp lệ'}</Text>
+                            {/* <Text style={styles.error}>{isValidDust ? '' : 'Bụi mịn không hợp lệ'}</Text> */}
                         </View>
 
                         <View style={styles.item}>
@@ -169,7 +169,7 @@ function Add() {
                                     isValid ? setIsValidAir(true) : setIsValidAir(false)
                                 }}
                                 keyboardType='numeric' />
-                            <Text style={styles.error}>{isValidAir ? '' : 'Không khí không hợp lệ'}</Text>
+                            {/* <Text style={styles.error}>{isValidAir ? '' : 'Không khí không hợp lệ'}</Text> */}
                         </View>
                     </View>
 
