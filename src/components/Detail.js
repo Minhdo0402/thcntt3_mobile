@@ -38,11 +38,12 @@ function Detail(props) {
                         {/* BODY */}
                         <View>
                             <Text style={styles.body}>Id: {item._id}</Text>
-                            <Text style={styles.body}>Nhiệt độ: {item.temperature}</Text>
-                            <Text style={styles.body}>Độ ẩm: {item.humidity}</Text>
-                            <Text style={styles.body}>Bụi mịn: {item.dust}</Text>
-                            <Text style={styles.body}>Ngày tạo: {item.date}</Text>
-                            <Text style={styles.body}>Giờ tạo: {item.time}</Text>
+                            <Text style={styles.body}>Nhiệt độ: {item.temperature} °C</Text>
+                            <Text style={styles.body}>Độ ẩm: {item.humidity} %</Text>
+                            <Text style={styles.body}>Bụi mịn: {item.dust} mg/m3</Text>
+                            <Text style={styles.body}>Không khí: {item.air} PPM</Text>
+                            <Text style={styles.body}>Ngày: {item.date}</Text>
+                            <Text style={styles.body}>Thời gian: {item.time}</Text>
                         </View>
 
                         {/* FOOTER */}

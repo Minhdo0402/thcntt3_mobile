@@ -24,10 +24,12 @@ function Add() {
     const [temperature, setTemperature] = useState('');
     const [humidity, setHumidity] = useState('');
     const [dust, setDust] = useState('');
+    const [air, setAir] = useState('');
 
     const [isValidTemperature, setIsValidTemperature] = useState(true);
     const [isValidHumidity, setIsValidHumidity] = useState(true);
     const [isValidDust, setIsValidDust] = useState(true);
+    const [isValidAir, setIsValidAir] = useState(true);
 
     const [showModal, setShowModal] = useState(false);
     const [message, setMessage] = useState('');
@@ -49,10 +51,12 @@ function Add() {
         if (!temperature) errors.push('Vui lòng nhập nhiệt độ\n');
         if (!humidity) errors.push('Vui lòng nhập độ ẩm\n');
         if (!dust) errors.push('Vui lòng nhập bụi mịn\n');
+        if (!air) errors.push('Vui lòng nhập không khí\n');
 
         if (!isValidTemperature) errors.push('Nhiệt độ không hợp lệ\n');
         if (!isValidHumidity) errors.push('Độ ẩm không hợp lệ\n');
         if (!isValidDust) errors.push('Bụi mịn không hợp lệ\n');
+        if (!isValidAir) errors.push('Không khí không hợp lệ\n');
 
         if (errors.length > 0) {
             Alert.alert(
@@ -68,7 +72,8 @@ function Add() {
             const data = {
                 temperature: temperature,
                 humidity: humidity,
-                dust: dust
+                dust: dust,
+                air: air,
             };
             await addData(data)
                 .then(() => {
@@ -151,6 +156,20 @@ function Add() {
                                 }}
                                 keyboardType='numeric' />
                             <Text style={styles.error}>{isValidDust ? '' : 'Bụi mịn không hợp lệ'}</Text>
+                        </View>
+
+                        <View style={styles.item}>
+                            <Text style={styles.label}>Không khí</Text>
+                            <TextInput
+                                style={styles.input}
+                                value={air}
+                                onChangeText={(value) => {
+                                    setAir(value);
+                                    const isValid = verifyNumber(value);
+                                    isValid ? setIsValidAir(true) : setIsValidAir(false)
+                                }}
+                                keyboardType='numeric' />
+                            <Text style={styles.error}>{isValidAir ? '' : 'Không khí không hợp lệ'}</Text>
                         </View>
                     </View>
 

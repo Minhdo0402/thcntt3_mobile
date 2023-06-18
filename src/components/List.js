@@ -82,7 +82,8 @@ function List() {
                 <View style={styles.left_item}>
                     <Text style={styles.text}>Nhiệt độ: {item.temperature} °C</Text>
                     <Text style={styles.text}>Độ ẩm: {item.humidity} %</Text>
-                    <Text style={styles.text}>Nồng độ bụi: {item.dust} mg/m3</Text>
+                    <Text style={styles.text}>Bụi mịn: {item.dust} mg/m3</Text>
+                    <Text style={styles.text}>Không khí: {item.air} PPM</Text>
                 </View>
                 <View style={styles.right_item}>
                     <TouchableOpacity style={[styles.btn_common, styles.btn_info]}>

@@ -22,16 +22,18 @@ const heightOfDevice = Dimensions.get('window').height;
 function Update() {
 
     const route = useRoute();
-    const { _id, temperature: temperatureDt, humidity: humidityDt, dust: dustDt, ...others } = route.params;
+    const { _id, temperature: temperatureDt, humidity: humidityDt, dust: dustDt, air: airDt, ...others } = route.params;
 
     const [temperature, setTemperature] = useState(temperatureDt.toString());
     const [humidity, setHumidity] = useState(humidityDt.toString());
     const [dust, setDust] = useState(dustDt.toString());
+    const [air, setAir] = useState(airDt.toString());
 
 
     const [isValidTemperature, setIsValidTemperature] = useState(true);
     const [isValidHumidity, setIsValidHumidity] = useState(true);
     const [isValidDust, setIsValidDust] = useState(true);
+    const [isValidAir, setIsValidAir] = useState(true);
 
     const [showModal, setShowModal] = useState(false);
     const [message, setMessage] = useState('');
@@ -53,10 +55,12 @@ function Update() {
         if (!temperature) errors.push('Vui lòng nhập nhiệt độ\n');
         if (!humidity) errors.push('Vui lòng nhập độ ẩm\n');
         if (!dust) errors.push('Vui lòng nhập bụi mịn\n');
+        if (!air) errors.push('Vui lòng nhập không khí\n');
 
         if (!isValidTemperature) errors.push('Nhiệt độ không hợp lệ\n');
         if (!isValidHumidity) errors.push('Độ ẩm không hợp lệ\n');
         if (!isValidDust) errors.push('Bụi mịn không hợp lệ\n');
+        if (!isValidAir) errors.push('Không khí không hợp lệ\n');
 
         if (errors.length > 0) {
             Alert.alert(
@@ -73,7 +77,8 @@ function Update() {
                 id: _id,
                 temperature: temperature,
                 humidity: humidity,
-                dust: dust
+                dust: dust,
+                air: air,
             };
             await updateData(data)
                 .then(() => {
@@ -156,6 +161,20 @@ function Update() {
                                 }}
                                 keyboardType='numeric' />
                             <Text style={styles.error}>{isValidDust ? '' : 'Bụi mịn không hợp lệ'}</Text>
+                        </View>
+
+                        <View style={styles.item}>
+                            <Text style={styles.label}>Không khí</Text>
+                            <TextInput
+                                style={styles.input}
+                                value={dust}
+                                onChangeText={(value) => {
+                                    setAir(value);
+                                    const isValid = verifyNumber(value);
+                                    isValid ? setIsValidAir(true) : setIsValidAir(false)
+                                }}
+                                keyboardType='numeric' />
+                            <Text style={styles.error}>{isValidAir ? '' : 'Không khí không hợp lệ'}</Text>
                         </View>
                     </View>
 

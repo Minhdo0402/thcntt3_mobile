@@ -13,6 +13,7 @@ import { useNavigation } from '@react-navigation/native';
 import Dust from '../../assets/images/Dust.jpg';
 import Humidity from '../../assets/images/Humidity.jpg';
 import Temperature from '../../assets/images/Temperature.jpg';
+import Air from '../../assets/images/Air.jpg';
 
 const WIDTH_OF_SCREEN = Dimensions.get('window').width;
 const HEIGHT_OF_SCREEN = Dimensions.get('window').height;
@@ -23,8 +24,8 @@ function Home() {
 
     const [slideActive, setSlideActive] = useState(0);
 
-    const images = [Dust, Humidity, Temperature];
-    const contents = ['Quản lý bụi mịn', 'Quản lý độ ẩm', 'Quản lý nhiệt độ'];
+    const images = [Dust, Humidity, Temperature, Air];
+    const contents = ['Quản lý bụi mịn', 'Quản lý độ ẩm', 'Quản lý nhiệt độ', 'Quản lý không khí'];
 
     const showImages = images.map((item, index) => (<Image key={index} style={styles.wrapper} resizeMode='stretch' source={item} />));
     const showDots = images.map((item, index) => (<Text key={index} style={index === slideActive ? [styles.dot, { color: 'red' }] : [styles.dot, { color: 'white' }]}>⬤</Text>));
@@ -35,7 +36,7 @@ function Home() {
             if (slide !== slideActive) {
                 setSlideActive(slide);
             }
-            if (slideActive === 2) {
+            if (slideActive === 3) {
                 setTimeout(() => {
                     navigation.navigate('List');
                 }, 1000);
