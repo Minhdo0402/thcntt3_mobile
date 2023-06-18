@@ -253,8 +253,8 @@ const styles = StyleSheet.create({
     },
     btn: {
         alignSelf: 'center',
-        marginTop: 20,
-        width: 150,
+        marginTop: 50,
+        width: "70%",
         padding: 15,
         backgroundColor: '#F5FFFA',
         borderWidth: 1,
