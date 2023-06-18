@@ -38,7 +38,7 @@ function Welcome() {
 
             <SafeAreaView style={styles.safeArea}>
                 <Animated.View style={[styles.wrapper, { marginTop: topMotion }]}>
-                    <Text style={styles.title}>Ứng dụng quản lý nhiệt độ, độ ẩm, bụi mịn</Text>
+                    <Text style={styles.title}>Quản lý nhiệt độ, độ ẩm, bụi mịn, không khí</Text>
                 </Animated.View>
             </SafeAreaView>
         </ImageBackground>
