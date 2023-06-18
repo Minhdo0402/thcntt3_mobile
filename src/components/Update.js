@@ -167,7 +167,7 @@ function Update() {
                             <Text style={styles.label}>Không khí</Text>
                             <TextInput
                                 style={styles.input}
-                                value={dust}
+                                value={air}
                                 onChangeText={(value) => {
                                     setAir(value);
                                     const isValid = verifyNumber(value);
