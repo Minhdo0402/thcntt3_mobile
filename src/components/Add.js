@@ -212,7 +212,7 @@ const styles = StyleSheet.create({
     },
     item: {
         width: '80%',
-        height: 50,
+        height: 60,
         marginVertical: 50,
         padding: 5,
         shadowColor: '#000',
